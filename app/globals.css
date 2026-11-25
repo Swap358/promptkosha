@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Design tokens (spec: soft off-white, dark text, subtle purple accent).
+   Use them in markup like: bg-paper text-ink bg-accent */
+@theme {
+  --color-paper: #faf9f7;
+  --color-surface: #ffffff;
+  --color-ink: #1c1b22;
+  --color-muted: #6b6a75;
+  --color-line: #e7e5e4;
+  --color-accent: #5b4bdb;
+  --color-accent-soft: #eeebff;
+  --radius-card: 1rem;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-paper); color: var(--color-ink); }
+
+/* Visible keyboard focus everywhere */
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
